@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--suppress ALL -->
 <html>
 <head>
   <meta charset="utf-8">
@@ -17,8 +18,9 @@
         <polygon points="19 59 19 67 23 67 23 86 48 86 48 54 19 54 19 59"/>
       </g>
       <g id="wizard-head">
-        <polygon points="48 86 53 86 53 15 58 15 58 10 62 10 62 5 58 5 58 10 48 10 48 5 43 5 43 10 48 10 48 14 48 86"
-                 fill="#be3827"/>
+        <polygon
+          points="48 86 53 86 53 15 58 15 58 10 62 10 62 5 58 5 58 10 48 10 48 5 43 5 43 10 48 10 48 14 48 86"
+          fill="#be3827"/>
         <polygon points="9 37 19 37 19 23 48 23 48 28 53 28 53 42 48 42 48 51 14 51 14 46 9 46 9 37"
                  fill="#fbd868"/>
         <rect x="33" y="39" width="10" height="5" fill="#bec1c3"/>
@@ -82,7 +84,8 @@
 
 
     <div class="setup-artifacts-shop">
-      <div class="setup-artifacts-cell"><img src="img/icon-star.png" alt="Star" width="65" height="50" draggable="true">
+      <div class="setup-artifacts-cell"><img src="img/icon-star.png" alt="Star" width="65" height="50"
+                                             draggable="true">
       </div>
       <div class="setup-artifacts-cell"></div>
       <div class="setup-artifacts-cell"></div>
@@ -99,9 +102,9 @@
         <div class="setup-wizard-wrap">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 62 86" class="setup-wizard">
             <g class="wizard">
-              <use xlink:href="#wizard-coat"  class="wizard-coat" style="fill: #6589a4"></use>
-              <use xlink:href="#wizard-head"  class="wizard-head"></use>
-              <use xlink:href="#wizard-eyes"  class="wizard-eyes"></use>
+              <use xlink:href="#wizard-coat" class="wizard-coat" style="fill: #6589a4"></use>
+              <use xlink:href="#wizard-head" class="wizard-head"></use>
+              <use xlink:href="#wizard-eyes" class="wizard-eyes"></use>
               <use xlink:href="#wizard-hands" class="wizard-hands"></use>
             </g>
           </svg>
@@ -158,7 +161,7 @@
     <div class="setup-similar-content">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 62 86" class="setup-similar-wizard">
         <g class="wizard">
-          <use xlink:href="#wizard-coat" class="wizard-coat" ></use>
+          <use xlink:href="#wizard-coat" class="wizard-coat"></use>
           <use xlink:href="#wizard-head" class="wizard-head"></use>
           <use xlink:href="#wizard-eyes" class="wizard-eyes"></use>
           <use xlink:href="#wizard-hands" class="wizard-hands"></use>
@@ -168,6 +171,32 @@
     <p class="setup-similar-label">Петр Петров</p>
   </div>
 </template>
+
+<script>
+
+  var fireballSize = 22;
+  var wizardSpeed = 3;
+  var wizardWidth = 70;
+
+
+  var getFireballSpeed = function (left) {
+    return left ? 5 : 2;
+  }
+
+  var getWizardHeight = function () {
+    return 1.337 * wizardWidth;
+  }
+
+  var getWizardX = function (width) {
+    return width / 2 - wizardWidth / 2;
+  }
+
+  var getWizardY = function (height) {
+    return (height * 1 / 3);
+  }
+
+</script>
+<script src='js/game.js'></script>
 
 </body>
 </html>
