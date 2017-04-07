@@ -22,7 +22,7 @@ var getRandElement = function (Arr) {
   return Arr[Math.floor(Math.random() * Arr.length)];
 };
 
-var generateUser = function() {
+var generateUser = function () {
   return {
     name: getRandElement(WIZARD_NAMES) + ' ' + getRandElement(WIZARD_SURNAMES),
     coatColor: getRandElement(coatColor),
@@ -50,7 +50,7 @@ var createWizardElement = function (user) {
   return wizardElement;
 };
 
-var addWizardElementInList = function(element, list) {
+var addWizardElementInList = function (element, list) {
   var wizardElementNew = document.createDocumentFragment();
 
   wizardElementNew.appendChild(element);
