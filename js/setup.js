@@ -1,6 +1,3 @@
-/**
- * Created by Ekaterina.Zharova on 03.04.17.
- */
 'use strict';
 
 var userDialog = document.querySelector('.setup');
@@ -17,6 +14,7 @@ var WIZARD_SURNAMES = ['да Марья', 'Верон', 'Мирабелла', '�
 
 var coatColor = ['rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 100, 161)', 'rgb(56, 159, 117)', 'rgb(215, 210, 55)', 'rgb(0, 0, 0)'];
 var eyesColor = ['black', 'red', 'blue', 'yellow', 'green'];
+var fireballColor = ['#ee4830', '#30a8ee', '#5ce6c0', '#e848d5', '#e6e848'];
 
 var getRandElement = function (Arr) {
   return Arr[Math.floor(Math.random() * Arr.length)];
@@ -65,3 +63,71 @@ for (var i = 0; i < useArr.length; i++) {
   addWizardElementInList(wizardElement, similarListElement);
 }
 
+var setupOpen = document.querySelector('.setup-open');
+var setup = document.querySelector('.setup');
+var setupClose = setup.querySelector('.setup-close');
+var setupSubmit = setup.querySelector('.setup-submit');
+var Validity = setup.querySelector('.setup-user-name');
+var wizardCoat = document.querySelector('.wizard-coat');
+var wizardEyes = document.querySelector('.wizard-eyes');
+var wizardFireball = document.querySelector('.setup-fireball');
+
+
+var openPopup = function () {
+  setup.classList.remove('hidden');
+
+  document.addEventListener('keydown', function (evt) {
+    if (evt.keyCode === 27) {
+      closePopup();
+    } });
+};
+
+var closePopup = function () {
+  setup.classList.add('hidden');
+};
+
+setupOpen.addEventListener('click', function () {
+  openPopup();
+});
+
+setupOpen.addEventListener('keydown', function (evt) {
+  if (evt.keyCode === 13) {
+    openPopup();
+  }
+});
+
+setupClose.addEventListener('click', function () {
+  closePopup();
+});
+
+setupClose.addEventListener('keydown', function (evt) {
+  if (evt.keyCode === 13) {
+    closePopup();
+  }
+});
+
+setupSubmit.addEventListener('click', function () {
+  if (Validity.valid) {
+    closePopup();
+  }
+});
+setupSubmit.addEventListener('keydown', function (evt) {
+  if (evt.keyCode === 13) {
+    closePopup();
+  }
+});
+
+wizardCoat.addEventListener('click', function (evt) {
+  var target = evt.target;
+  target.style.fill = getRandElement(coatColor);
+});
+
+wizardEyes.addEventListener('click', function (evt) {
+  var target = evt.target;
+  target.style.fill = getRandElement(eyesColor);
+});
+
+wizardFireball.addEventListener('click', function (evt) {
+  var target = evt.target;
+  target.style.backgroundColor = getRandElement(fireballColor);
+});
